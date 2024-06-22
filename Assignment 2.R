@@ -3,6 +3,9 @@
 #Summer term 2024
 #VIAN TRAN
 
+#' REVIEW: Excellent outline of the plan. I strongly recommend using #' to avoid
+#' having to retype # everytime you start a new line.
+
 #PLAN
 #1. Prompt and read user input (enter 3 digit positive number)
 #2. Check if the number if numeric, if not print error message and exit 
@@ -12,13 +15,20 @@
 #calculate for a narcissistic number
 #5. Check if the number is narcissistic (a number that is equal to the sum of the cubes of its own digits) 
 #if TRUE - display number is a narcissistic number  
-#if FALSE - display number is not a narcissistic number 
+#if FALSE - display number is not a narcissistic number
+
+#' REVIEW: Good prompt. Although you were specific with the number of digits to enter, just
+#' a minor suggestion to specify natural numbers, to avoid users entering decimals.
 
 #Prompt the user to enter in a 3 digit positive number and save it in the environment as variable "number"
 number <- readline(prompt = "Please enter a three-digit positive number:  ")
 
 #The "number" variable is a character vector, we need to convert it to a numeric vector for further use
 number <- as.numeric(number)
+
+#' REVIEW: Fantastic checking system. Vian makes appropriate use of the if statement, and reduces the 
+#' number of lines by combining the exclusion of two and four+ digit entries in one line. Great work!
+#' I suggest fixing the spelling of narcissistic.
 
 #Checking system: 
 #Check if the number is numeric. TRUE indicates it is not numeric. if TRUE stop the code
@@ -31,13 +41,19 @@ if (is.na(number)) {
 #If all of the above conditions are FALSE, the number is numeric and a 3 digit positive number.
 } else {
   print(paste(number, "is a 3 digit positive number! Congrats! Let's see if it is narcississtic."))
-
+  
 #To sum the cubes of each individual digit in the 3 digit positive number,
 #we need to split the 3 digit positive number into its individual digits (ie. 123 into 1, 2, and 3)
 
 #We can split the elements of a character vector using the strsplit function by first reading the 3
 #digit positive number as characters
 
+  #' REVIEW: Great plan to determine if the number entered is a narcissistic number or not. Vian
+  #' splits the number into its individual digits. This is followed by assigning the sum of its 
+  #' cubes to a variable, and checking if that variable is equal to the number entered. Vian then 
+  #' leaves a message to the user. The messages left by Vian are very motivating and genuinely 
+  #' encourage the user to "do better" and improve their skills to follow instructions.  
+  
 individual_character <- strsplit(as.character(number), "")
 
 #The strsplit function will display the results as a list. To calculate the sum of cubes of each
@@ -57,9 +73,3 @@ if (sum_of_cubes == number) {
   print(paste("Sorry, please do better next time,", number, "is not a narcissistic number. Do better."))
 }
 }
-
-
-
-
-
-
